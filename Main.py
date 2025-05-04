@@ -21,11 +21,16 @@ def buscaBinaria(sequencia, valor):
         else:
             inicio = meio + 1
 
-    return None
+    return -1
 
 tamanho = int(input("Qual o tamanho da sequencia?: "))
 sequencia = [(i + 1) * 3 for i in range(tamanho)]
 print("Números:", ' '.join(map(str, sequencia)))
 valor = int(input("Escolha um valor: "))
 
-print("O seu valor foi encontrado na posição: ",buscaBinaria(sequencia, valor))
+resultado = buscaBinaria(sequencia, valor)
+
+if resultado == -1:
+    print("Valor não encontrado, tente um valor válido")
+else:
+    print("O Valor foi encontrado na posição: ", resultado)
